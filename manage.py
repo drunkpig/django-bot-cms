@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 import os
 import sys
+from logging.config import fileConfig
 
 if __name__ == '__main__':
+    fileConfig('logging.ini')
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_bot_cms.settings')
     try:
         from django.core.management import execute_from_command_line

@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+
+
+    'bot_cms_web',
+    'bot_cms_apiw.apps.BotCmsApiwConfig',
+    'bot_cms_apir',
 ]
 
 MIDDLEWARE = [
@@ -77,9 +83,25 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+    },
 
+    'PG': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'redpkg',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'dev.jscrapy.org',
+        'PORT': '5432',
+    },
+
+    # 'MYSQL': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'redpkg',    ## db_name
+    #     'USER': 'root',
+    #     'PASSWORD': 'password',    ## root user psw
+    #     'HOST': '127.0.0.1',
+    # }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
